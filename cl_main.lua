@@ -5,6 +5,25 @@ AddRelationshipGroup("SUB_CREW") --creates a new relationship group for submarin
 SetRelationshipBetweenGroups(5, "SUB_CREW", "PLAYER") --sets submarine crew to hate player peds
 SetRelationshipBetweenGroups(0, "SUB_CREW", "SUB_CREW") --sets submarine crew to be companions with each other
 
+-- local SubmarineInteriorZone = BoxZone:Create(vector3(514.34, 4862.39, -64.99), 100.0, 30.0, { --establishes submarine interior zone
+-- 	name="SubmarineInteriorZone",
+-- 	heading = 180.11,
+-- 	useZ = true,
+-- 	debugPoly = false
+-- })
+
+-- function checkifinSubmarineInteriorZone() --checks if ped is in submarine interior zone
+-- 	while true do
+-- 		local ped = PlayerPedId()
+-- 		local coord = GetEntityCoords(ped)
+-- 		inSubmarineInteriorZone = SubmarineInteriorZone:isPointInside(coord)
+-- 		if inSubmarineInteriorZone then
+-- 			return true
+-- 		else
+-- 			return false
+-- 		end
+-- 	end
+-- end
 
 RegisterNetEvent("spawnnpcs")
 AddEventHandler("spawnnpcs", function()
@@ -77,13 +96,5 @@ AddEventHandler("playerSpawned", function()
 	if initialSpawn and GetNumberOfPlayers() == 1 then
 		TriggerServerEvent("collectnpcs")
 		initialSpawn = false
-	end
-end)
-
-CreateThread(function()
-	while true do
-		Wait(5000)
-		print("Client")
-		print(initialspawn)
 	end
 end)

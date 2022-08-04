@@ -11,10 +11,3 @@ Citizen.CreateThread(function()
     end)
 end)
 
-CreateThread(function()
-	while true do
-		Wait(7000)
-        print("Server")
-		print(npcsspawned)
-	end
-end)
