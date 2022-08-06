@@ -1,5 +1,10 @@
 Config = {}
 
+--Relationship Setup
+AddRelationshipGroup("SUB_CREW") --creates a new relationship group for submarine crew
+SetRelationshipBetweenGroups(5, "SUB_CREW", "PLAYER") --sets submarine crew to hate player peds
+SetRelationshipBetweenGroups(0, "SUB_CREW", "SUB_CREW") --sets submarine crew to be companions with each other
+
 Config.Peds = {
 	---
   { model="s_f_y_stripper_02", 
