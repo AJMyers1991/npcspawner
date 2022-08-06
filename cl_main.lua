@@ -1,9 +1,5 @@
 local initialSpawn = true
 
---Relationship Setup
-AddRelationshipGroup("SUB_CREW") --creates a new relationship group for submarine crew
-SetRelationshipBetweenGroups(5, "SUB_CREW", "PLAYER") --sets submarine crew to hate player peds
-SetRelationshipBetweenGroups(0, "SUB_CREW", "SUB_CREW") --sets submarine crew to be companions with each other
 
 -- local SubmarineInteriorZone = BoxZone:Create(vector3(514.34, 4862.39, -64.99), 100.0, 30.0, { --establishes submarine interior zone
 -- 	name="SubmarineInteriorZone",
